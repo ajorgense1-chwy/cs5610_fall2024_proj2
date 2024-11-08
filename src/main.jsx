@@ -10,18 +10,22 @@ import {
 import Help from './Help.jsx';
 import Game from './Game.jsx';
 import { CounterProvider } from './CounterProvider.jsx';
+import TitleHomePage from './TitleHomePage.jsx';
+import WhackAMoleGame from './WhackAMoleGame.jsx';
+import { WhatAMoleGameProvider } from './WhackAMoleGameProvider.jsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: 
-    <CounterProvider>
-          <App />
-    </CounterProvider>
+    <TitleHomePage />
   },
   {
-    path: '/help',
-    element: <Help />
+    path: '/game',
+    element: 
+    <WhatAMoleGameProvider>
+      <WhackAMoleGame />
+    </WhatAMoleGameProvider>
   }, 
   {
     path: '/game/:difficulty',
